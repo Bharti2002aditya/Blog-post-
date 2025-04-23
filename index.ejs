@@ -1,0 +1,27 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <H1>Daily posts</H1> <br>
+  <div class="post">
+  <%for (let thought of posts){%>
+    <p class="user">username:  <%= thought.username %></p>
+    <p class="comm">comment:  <%= thought.Comment %></p><br>
+    <a href="http://localhost:3000/posts/<%= posts.id %>">See Details</a>
+    <a href="http://localhost:3000/posts/<%= posts.id %>/edit">Edit</a>
+
+    <form method="post" action="/posts/<%=posts.id%>?_method=DELETE">
+      <button> Delete </button>
+    </form>
+
+<% }  %>
+<br>
+<a href="http://localhost:3000/posts/new/">Create Posts</a>
+</div>
+</body>
+</html>
